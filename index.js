@@ -38,4 +38,7 @@ app.listen(process.env.PORT, () => {
 connection.connect(function (e) {
     if (e) throw e;
     console.log('Aplikace napojena na databázu!');
+    setInterval(() => {
+        connection.ping();
+    }, 30 * 60 * 1000);
 })
